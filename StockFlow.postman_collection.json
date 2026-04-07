@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "StockFlow API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "companyId", "value": "" },
+    { "key": "warehouseId", "value": "" },
+    { "key": "supplierId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/"
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Widget B\",\n  \"sku\": \"WID-B-002\",\n  \"price\": 29.99,\n  \"warehouse_id\": \"{{warehouseId}}\",\n  \"initial_quantity\": 50,\n  \"supplier_id\": \"{{supplierId}}\",\n  \"product_type\": \"standard\",\n  \"low_stock_threshold\": 20\n}"
+        },
+        "url": "{{baseUrl}}/api/products"
+      }
+    },
+    {
+      "name": "Record Sale",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"warehouse_id\": \"{{warehouseId}}\",\n  \"quantity_sold\": 30,\n  \"note\": \"Customer order\"\n}"
+        },
+        "url": "{{baseUrl}}/api/products/{{productId}}/sales"
+      }
+    },
+    {
+      "name": "Low Stock Alerts",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/companies/{{companyId}}/alerts/low-stock"
+      }
+    }
+  ]
+}
