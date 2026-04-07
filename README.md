@@ -11,6 +11,7 @@ StockFlow is a B2B Inventory Management System REST API built for multi-warehous
 - nodemon for development
 
 ## Project Structure
+```
 stockflow/
 ├── src/
 │   ├── models/
@@ -34,6 +35,7 @@ stockflow/
 ├── .env.example
 ├── package.json
 └── README.md
+```
 
 ## Case Study Documents
 - [`part1_review.md`](./part1_review.md) — Detailed bug analysis
