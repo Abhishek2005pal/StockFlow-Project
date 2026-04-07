@@ -44,6 +44,7 @@ stockflow/
 - [`schema.md`](./schema.md) — Full MongoDB schema design,
   collection relationships, index decisions, and product team
   questions.
+- Case study document: https://docs.google.com/document/d/1dQJdwNruUJ0FjYAUpXyWGnesxJ7KyCXB/edit?usp=sharing&ouid=106999186977403060629&rtpof=true&sd=true
 
 ## Local Setup
 ```bash
